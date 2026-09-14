@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product | Saint Paul Luxury</title>
+<meta name="description" content="Small-batch menswear from Saint Paul Luxury, Lagos.">
+<meta property="og:title" content="Product | Saint Paul Luxury">
+<meta property="og:description" content="Small-batch menswear from Saint Paul Luxury, Lagos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/emblem-master.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce" aria-hidden="true">
+  <div class="announce-track">
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <nav>
+      <a class="nav-mark" href="index.html" aria-label="Saint Paul Luxury home">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html">Shop</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html">Shipping &amp; FAQ</a>
+        <a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+      </div>
+      <div class="nav-right">
+        <a class="cart-link" href="cart.html" aria-label="View cart">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span data-cart-count>0</span>
+        </a>
+        <a class="nav-cta" href="https://wa.me/2347046672338" target="_blank" rel="noopener">Enquire</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="container breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="crumbName">Product</span></div>
+<section>
+  <div class="container pdp">
+    <div class="pdp-gallery">
+      <div class="pdp-gallery-main">
+        <img id="mainImage" src="" alt="">
+      </div>
+      <div class="pdp-thumbs" id="thumbRow" role="tablist" aria-label="Product images"></div>
+    </div>
+    <div class="pdp-info">
+      <p class="cat" id="pCategory"></p>
+      <h1 id="pName"></h1>
+      <p class="pdp-price" id="pPrice"></p>
+      <p class="pdp-desc" id="pDesc"></p>
+
+      <div class="option-block" id="colorBlock" style="display:none;">
+        <div class="option-label"><span>Colour: <strong id="selectedColor"></strong></span></div>
+        <div class="swatches" id="colorSwatches"></div>
+      </div>
+
+      <div class="option-block">
+        <div class="option-label"><span>Size</span><a href="info.html#size-guide">Size guide</a></div>
+        <div class="size-row" id="sizeRow"></div>
+      </div>
+
+      <div class="option-block">
+        <div class="option-label"><span>Quantity</span></div>
+        <div class="qty-row">
+          <button type="button" id="qtyMinus" aria-label="Decrease quantity">&minus;</button>
+          <span id="qtyValue">1</span>
+          <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+
+      <div class="pdp-actions">
+        <button type="button" class="btn btn-dark" id="addToCartBtn">Add to bag</button>
+        <a class="btn btn-outline" id="enquireLink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.26 8.25m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.23-1.46-1.38-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29"/></svg> Enquire on WhatsApp</a>
+      </div>
+      <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+
+      <div class="accordion">
+        <div class="accordion-item" data-open="false">
+          <button type="button">Fabric &amp; material <span class="icon">+</span></button>
+          <div class="accordion-panel"><p id="pFabric"></p></div>
+        </div>
+        <div class="accordion-item" data-open="false">
+          <button type="button">Fit <span class="icon">+</span></button>
+          <div class="accordion-panel"><p id="pFit"></p></div>
+        </div>
+        <div class="accordion-item" data-open="false">
+          <button type="button">Care instructions <span class="icon">+</span></button>
+          <div class="accordion-panel"><p id="pCare"></p></div>
+        </div>
+        <div class="accordion-item" data-open="false">
+          <button type="button">Delivery <span class="icon">+</span></button>
+          <div class="accordion-panel"><p>Lagos: 1 to 3 working days. Nationwide: 3 to 7 working days. Delivery is arranged directly over WhatsApp once your order is confirmed.</p></div>
+        </div>
+        <div class="accordion-item" data-open="false">
+          <button type="button">Returns <span class="icon">+</span></button>
+          <div class="accordion-panel"><p>See our full <a href="info.html#returns" style="text-decoration:underline;">returns and exchange policy</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="alsoLikeSection" style="border-top:1px solid var(--line);">
+  <div class="container">
+    <div style="max-width:600px; margin-bottom:2.6rem;">
+      <span class="eyebrow">Also from the drop</span>
+      <h2 class="display" style="font-size:1.9rem; margin-top:0.5rem;">You might also like.</h2>
+    </div>
+    <div class="product-grid" id="relatedGrid"></div>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+        <p>Small batch menswear, designed and printed in Lagos. Earned, not given.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All products</a>
+        <a href="shop.html?category=Sweatshirts">Sweatshirts</a>
+        <a href="shop.html?category=Headwear">Headwear</a>
+        <a href="shop.html?category=Shorts">Shorts</a>
+      </div>
+      <div class="foot-col">
+        <h4>The House</h4>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="info.html#shipping">Shipping</a>
+        <a href="info.html#returns">Returns &amp; exchange</a>
+        <a href="info.html#care">Care instructions</a>
+        <a href="info.html#size-guide">Size guide</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener">WhatsApp</a>
+        <span>Lagos, Nigeria</span>
+        <div class="foot-newsletter">
+          <label for="newsletter-email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="newsletter-email" type="email" placeholder="Email for updates" aria-label="Email for updates">
+          <button type="button" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Saint Paul Luxury. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/saint.paulluxury" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@saint.paul.luxury" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.1c-.9-.6-1.5-1.6-1.6-2.7h-3v13.4a2.6 2.6 0 1 1-1.9-2.5v-3.1a5.6 5.6 0 1 0 4.9 5.6V9.3a6.9 6.9 0 0 0 3.9 1.2V7.5a4 4 0 0 1-2.3-2.4Z"/></svg>
+        </a>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/products.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const product = getProductBySlug(slug) || PRODUCTS[0];
+  let variant = product.variants.find(v => v.color === params.get("color")) || product.variants[0];
+  let size = null;
+  let qty = 1;
+  let activeImgIndex = 0;
+
+  document.title = `${product.name} | Saint Paul Luxury`;
+  document.getElementById("crumbName").textContent = product.name;
+  document.getElementById("pCategory").textContent = `${product.category} / ${variant.color}`;
+  document.getElementById("pName").textContent = product.name;
+  document.getElementById("pDesc").textContent = product.description;
+  document.getElementById("pFabric").textContent = product.fabric;
+  document.getElementById("pFit").textContent = product.fit;
+  document.getElementById("pCare").textContent = product.care;
+
+  function renderPrice() {
+    document.getElementById("pPrice").textContent = formatNaira(product.price);
+  }
+  renderPrice();
+
+  function renderGallery() {
+    activeImgIndex = 0;
+    const mainImg = document.getElementById("mainImage");
+    mainImg.src = variant.images[0];
+    mainImg.alt = `${product.name} in ${variant.color}`;
+    const row = document.getElementById("thumbRow");
+    row.innerHTML = "";
+    variant.images.forEach((src, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = i === 0 ? "active" : "";
+      b.setAttribute("aria-label", `View image ${i + 1}`);
+      b.innerHTML = `<img src="${src}" alt="">`;
+      b.addEventListener("click", () => {
+        mainImg.src = src;
+        row.querySelectorAll("button").forEach(x => x.classList.remove("active"));
+        b.classList.add("active");
+      });
+      row.appendChild(b);
+    });
+  }
+  renderGallery();
+
+  function renderColors() {
+    const block = document.getElementById("colorBlock");
+    if (product.variants.length < 2) { block.style.display = "none"; return; }
+    block.style.display = "block";
+    document.getElementById("selectedColor").textContent = variant.color;
+    const wrap = document.getElementById("colorSwatches");
+    wrap.innerHTML = "";
+    product.variants.forEach(v => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "swatch" + (v.color === variant.color ? " active" : "");
+      b.textContent = v.color;
+      b.addEventListener("click", () => {
+        variant = v;
+        document.getElementById("selectedColor").textContent = v.color;
+        wrap.querySelectorAll(".swatch").forEach(s => s.classList.remove("active"));
+        b.classList.add("active");
+        document.getElementById("pCategory").textContent = `${product.category} / ${variant.color}`;
+        renderGallery();
+        const url = new URL(window.location);
+        url.searchParams.set("color", v.color);
+        window.history.replaceState({}, "", url);
+      });
+      wrap.appendChild(b);
+    });
+  }
+  renderColors();
+
+  function renderSizes() {
+    const row = document.getElementById("sizeRow");
+    row.innerHTML = "";
+    product.sizes.forEach(s => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "size-btn";
+      b.textContent = s;
+      const unavailable = (product.unavailableSizes || []).includes(s);
+      if (unavailable) b.disabled = true;
+      b.addEventListener("click", () => {
+        size = s;
+        row.querySelectorAll(".size-btn").forEach(x => x.classList.remove("active"));
+        b.classList.add("active");
+        document.getElementById("formNote").textContent = "";
+      });
+      row.appendChild(b);
+    });
+    if (product.sizes.length === 1) {
+      size = product.sizes[0];
+      row.firstChild.classList.add("active");
+    }
+  }
+  renderSizes();
+
+  document.getElementById("qtyMinus").addEventListener("click", () => {
+    qty = Math.max(1, qty - 1);
+    document.getElementById("qtyValue").textContent = qty;
+  });
+  document.getElementById("qtyPlus").addEventListener("click", () => {
+    qty = qty + 1;
+    document.getElementById("qtyValue").textContent = qty;
+  });
+
+  function buildEnquireLink() {
+    const msg = `Hi Saint Paul Luxury, I'm interested in the ${product.name} in ${variant.color}${size ? ", size " + size : ""}`;
+    document.getElementById("enquireLink").href = `https://wa.me/2347046672338?text=${encodeURIComponent(msg)}`;
+  }
+  buildEnquireLink();
+
+  document.getElementById("addToCartBtn").addEventListener("click", () => {
+    if (!size) {
+      document.getElementById("formNote").textContent = "Please select a size first.";
+      return;
+    }
+    buildEnquireLink();
+    addToCart({
+      slug: product.slug,
+      name: product.name,
+      color: variant.color,
+      size: size,
+      price: product.price,
+      qty: qty,
+      image: variant.images[0]
+    });
+    document.getElementById("formNote").textContent = "Added to your bag.";
+  });
+
+  document.querySelectorAll(".accordion-item button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.parentElement;
+      const open = item.getAttribute("data-open") === "true";
+      item.setAttribute("data-open", open ? "false" : "true");
+      const panel = item.querySelector(".accordion-panel");
+      panel.style.maxHeight = open ? "0px" : panel.scrollHeight + "px";
+    });
+  });
+
+  const relatedGrid = document.getElementById("relatedGrid");
+  const related = PRODUCTS.filter(p => p.slug !== product.slug);
+  if (!related.length) document.getElementById("alsoLikeSection").style.display = "none";
+  related.forEach(p => {
+    const v = p.variants[0];
+    const card = document.createElement("a");
+    card.className = "product-card";
+    card.href = `product.html?slug=${p.slug}&color=${encodeURIComponent(v.color)}`;
+    card.innerHTML = `
+      <div class="thumb">
+        <img class="main-img" src="${v.images[0]}" alt="${p.name} in ${v.color}" loading="lazy">
+      </div>
+      <div class="info">
+        <p class="cat">${p.category} / ${v.color}</p>
+        <h3>${p.name}</h3>
+        <p class="price">${formatNaira(p.price)}</p>
+      </div>`;
+    relatedGrid.appendChild(card);
+  });
+</script>
+</body>
+</html>
