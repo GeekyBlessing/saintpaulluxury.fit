@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Saint Paul Luxury</title>
+<meta name="description" content="Shop small-batch menswear from Saint Paul Luxury. Sweatshirts, headwear, and shorts, designed and printed in Lagos.">
+<meta property="og:title" content="Shop | Saint Paul Luxury">
+<meta property="og:description" content="Shop small-batch menswear from Saint Paul Luxury. Sweatshirts, headwear, and shorts, designed and printed in Lagos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/emblem-master.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce" aria-hidden="true">
+  <div class="announce-track">
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <nav>
+      <a class="nav-mark" href="index.html" aria-label="Saint Paul Luxury home">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html">Shipping &amp; FAQ</a>
+        <a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+      </div>
+      <div class="nav-right">
+        <a class="cart-link" href="cart.html" aria-label="View cart">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span data-cart-count>0</span>
+        </a>
+        <a class="nav-cta" href="https://wa.me/2347046672338" target="_blank" rel="noopener">Enquire</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="container breadcrumb"><a href="index.html">Home</a> / Shop</div>
+<section class="page-hero" style="padding-bottom:1rem;">
+  <span class="eyebrow">The Collection</span>
+  <h1 class="display">Shop.</h1>
+  <p class="lead">Small-batch pieces, printed in Lagos and not restocked to the letter.</p>
+</section>
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="shop-toolbar">
+      <div class="filter-tabs" id="filterTabs" role="tablist" aria-label="Filter by category">
+        <button data-cat="All" class="active">All</button>
+        <button data-cat="Sweatshirts">Sweatshirts</button>
+        <button data-cat="Headwear">Headwear</button>
+        <button data-cat="Shorts">Shorts</button>
+      </div>
+      <p class="result-count" id="resultCount"></p>
+    </div>
+    <div class="product-grid" id="shopGrid"></div>
+    <p class="empty-state" id="emptyState" style="display:none;">No pieces in this category yet, check back soon.</p>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+        <p>Small batch menswear, designed and printed in Lagos. Earned, not given.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All products</a>
+        <a href="shop.html?category=Sweatshirts">Sweatshirts</a>
+        <a href="shop.html?category=Headwear">Headwear</a>
+        <a href="shop.html?category=Shorts">Shorts</a>
+      </div>
+      <div class="foot-col">
+        <h4>The House</h4>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="info.html#shipping">Shipping</a>
+        <a href="info.html#returns">Returns &amp; exchange</a>
+        <a href="info.html#care">Care instructions</a>
+        <a href="info.html#size-guide">Size guide</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener">WhatsApp</a>
+        <span>Lagos, Nigeria</span>
+        <div class="foot-newsletter">
+          <label for="newsletter-email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="newsletter-email" type="email" placeholder="Email for updates" aria-label="Email for updates">
+          <button type="button" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Saint Paul Luxury. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/saint.paulluxury" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@saint.paul.luxury" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.1c-.9-.6-1.5-1.6-1.6-2.7h-3v13.4a2.6 2.6 0 1 1-1.9-2.5v-3.1a5.6 5.6 0 1 0 4.9 5.6V9.3a6.9 6.9 0 0 0 3.9 1.2V7.5a4 4 0 0 1-2.3-2.4Z"/></svg>
+        </a>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/products.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  const grid = document.getElementById("shopGrid");
+  const resultCount = document.getElementById("resultCount");
+  const emptyState = document.getElementById("emptyState");
+  const tabs = document.querySelectorAll("#filterTabs button");
+
+  function allCards() {
+    const cards = [];
+    PRODUCTS.forEach(p => {
+      p.variants.forEach(v => cards.push({ p, v }));
+    });
+    return cards;
+  }
+
+  function render(category) {
+    grid.innerHTML = "";
+    const cards = allCards().filter(c => category === "All" || c.p.category === category);
+    resultCount.textContent = cards.length + (cards.length === 1 ? " piece" : " pieces");
+    emptyState.style.display = cards.length ? "none" : "block";
+    cards.forEach(({ p, v }) => {
+      const card = document.createElement("a");
+      card.className = "product-card";
+      card.href = `product.html?slug=${p.slug}&color=${encodeURIComponent(v.color)}`;
+      card.innerHTML = `
+        <div class="thumb">
+          <span class="avail-tag">In stock</span>
+          <img class="main-img" src="${v.images[0]}" alt="${p.name} in ${v.color}, front" loading="lazy">
+          ${v.images[1] ? `<img class="alt-img" src="${v.images[1]}" alt="${p.name} in ${v.color}, back" loading="lazy">` : ""}
+        </div>
+        <div class="info">
+          <p class="cat">${p.category} / ${v.color}</p>
+          <h3>${p.name}</h3>
+          <p class="price">${formatNaira(p.price)}</p>
+        </div>`;
+      grid.appendChild(card);
+    });
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const initialCat = params.get("category") || "All";
+  tabs.forEach(btn => {
+    if (btn.dataset.cat === initialCat) btn.classList.add("active");
+    else btn.classList.remove("active");
+    btn.addEventListener("click", () => {
+      tabs.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      render(btn.dataset.cat);
+      const url = new URL(window.location);
+      if (btn.dataset.cat === "All") url.searchParams.delete("category");
+      else url.searchParams.set("category", btn.dataset.cat);
+      window.history.replaceState({}, "", url);
+    });
+  });
+  render(initialCat);
+</script>
+</body>
+</html>
