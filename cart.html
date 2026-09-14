@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart | Saint Paul Luxury</title>
+<meta name="description" content="Review your bag and checkout with Saint Paul Luxury on WhatsApp.">
+<meta property="og:title" content="Cart | Saint Paul Luxury">
+<meta property="og:description" content="Review your bag and checkout with Saint Paul Luxury on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/emblem-master.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce" aria-hidden="true">
+  <div class="announce-track">
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <nav>
+      <a class="nav-mark" href="index.html" aria-label="Saint Paul Luxury home">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html">Shop</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html">Shipping &amp; FAQ</a>
+        <a href="cart.html" aria-current="page">Cart (<span data-cart-count>0</span>)</a>
+      </div>
+      <div class="nav-right">
+        <a class="cart-link" href="cart.html" aria-label="View cart">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span data-cart-count>0</span>
+        </a>
+        <a class="nav-cta" href="https://wa.me/2347046672338" target="_blank" rel="noopener">Enquire</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="container breadcrumb"><a href="index.html">Home</a> / Cart</div>
+<section class="page-hero" style="padding-bottom:1rem;">
+  <span class="eyebrow">Your bag</span>
+  <h1 class="display">Cart.</h1>
+</section>
+<section style="padding-top:0;">
+  <div class="container" id="cartContainer" style="display:grid; grid-template-columns:1.6fr 1fr; gap:4vw; align-items:flex-start;">
+    <div id="cartItems"></div>
+    <div class="cart-summary" id="cartSummary">
+      <h2 class="display" style="font-size:1.3rem; margin-bottom:1.2rem;">Order summary</h2>
+      <div class="summary-row"><span>Items</span><span id="summaryCount">0</span></div>
+      <div class="summary-row total"><span>Total</span><span id="summaryTotal">&#8358;0</span></div>
+      <button type="button" class="btn btn-dark" id="checkoutBtn" style="width:100%; justify-content:center; margin-top:1.4rem;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.26 8.25m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.23-1.46-1.38-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29"/></svg> Checkout on WhatsApp</button>
+      <p style="font-size:0.78rem; color:var(--stone); margin-top:1rem; line-height:1.6;">Checkout opens WhatsApp with your order pre-filled. We'll confirm availability, delivery cost, and payment directly with you.</p>
+    </div>
+  </div>
+  <div class="empty-state" id="emptyCart" style="display:none;">
+    <p class="display">Your bag is empty.</p>
+    <p style="margin-bottom:1.6rem;">Nothing here yet.</p>
+    <a class="btn btn-dark" href="shop.html">Shop the collection</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+        <p>Small batch menswear, designed and printed in Lagos. Earned, not given.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All products</a>
+        <a href="shop.html?category=Sweatshirts">Sweatshirts</a>
+        <a href="shop.html?category=Headwear">Headwear</a>
+        <a href="shop.html?category=Shorts">Shorts</a>
+      </div>
+      <div class="foot-col">
+        <h4>The House</h4>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="info.html#shipping">Shipping</a>
+        <a href="info.html#returns">Returns &amp; exchange</a>
+        <a href="info.html#care">Care instructions</a>
+        <a href="info.html#size-guide">Size guide</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener">WhatsApp</a>
+        <span>Lagos, Nigeria</span>
+        <div class="foot-newsletter">
+          <label for="newsletter-email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="newsletter-email" type="email" placeholder="Email for updates" aria-label="Email for updates">
+          <button type="button" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Saint Paul Luxury. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/saint.paulluxury" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@saint.paul.luxury" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.1c-.9-.6-1.5-1.6-1.6-2.7h-3v13.4a2.6 2.6 0 1 1-1.9-2.5v-3.1a5.6 5.6 0 1 0 4.9 5.6V9.3a6.9 6.9 0 0 0 3.9 1.2V7.5a4 4 0 0 1-2.3-2.4Z"/></svg>
+        </a>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/products.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  function renderCartPage() {
+    const cart = getCart();
+    const itemsWrap = document.getElementById("cartItems");
+    const container = document.getElementById("cartContainer");
+    const emptyState = document.getElementById("emptyCart");
+
+    if (!cart.length) {
+      container.style.display = "none";
+      emptyState.style.display = "block";
+      return;
+    }
+    container.style.display = "grid";
+    emptyState.style.display = "none";
+
+    itemsWrap.innerHTML = "";
+    cart.forEach((item, i) => {
+      const row = document.createElement("div");
+      row.className = "cart-row";
+      row.innerHTML = `
+        <img src="${item.image}" alt="${item.name} in ${item.color}">
+        <div>
+          <p class="name">${item.name}</p>
+          <p class="meta">${item.color} / Size ${item.size}</p>
+          <button type="button" class="remove" data-index="${i}">Remove</button>
+        </div>
+        <div class="qty-row" style="margin:0;">
+          <button type="button" data-index="${i}" data-dir="-1" aria-label="Decrease quantity">&minus;</button>
+          <span>${item.qty}</span>
+          <button type="button" data-index="${i}" data-dir="1" aria-label="Increase quantity">+</button>
+        </div>
+        <p style="font-size:0.72rem; color:var(--stone); text-transform:uppercase; letter-spacing:0.08em;">Price</p>
+        <p style="font-family:'Cormorant Garamond',serif; color:var(--gold-deep);">${formatNaira(item.price * item.qty)}</p>
+      `;
+      itemsWrap.appendChild(row);
+    });
+
+    itemsWrap.querySelectorAll(".remove").forEach(btn =>
+      btn.addEventListener("click", () => removeFromCart(parseInt(btn.dataset.index)))
+    );
+    itemsWrap.querySelectorAll(".qty-row button[data-dir]").forEach(btn =>
+      btn.addEventListener("click", () => {
+        const cart = getCart();
+        const idx = parseInt(btn.dataset.index);
+        const dir = parseInt(btn.dataset.dir);
+        cart[idx].qty = Math.max(1, cart[idx].qty + dir);
+        saveCart(cart);
+        renderCartPage();
+      })
+    );
+
+    document.getElementById("summaryCount").textContent = cart.reduce((s, i) => s + i.qty, 0);
+    document.getElementById("summaryTotal").textContent = formatNaira(cartTotal());
+  }
+
+  /* Dependency guard: assets/main.js defines getCart, formatNaira, cartTotal,
+     and checkout. If that file failed to load (wrong path on deploy, 404,
+     host serving it with the wrong MIME type, etc.) none of those exist and
+     this page cannot function, no client-side cart page can. Rather than
+     let that throw a raw ReferenceError and leave the page half-rendered,
+     detect it, say so clearly in the console, and fall back to a real,
+     working WhatsApp link so the customer is never stuck. */
+  function initCartPage() {
+    const dependenciesOk =
+      typeof getCart === "function" &&
+      typeof saveCart === "function" &&
+      typeof formatNaira === "function" &&
+      typeof cartTotal === "function" &&
+      typeof checkout === "function";
+
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    if (!dependenciesOk) {
+      console.error(
+        "Cart page: assets/main.js did not load, cart functionality is unavailable. " +
+        "Check that the assets/ folder (main.js, products.js, images/) was deployed " +
+        "in the same directory as this HTML file, and that the browser network tab " +
+        "shows a 200, not a 404, for assets/main.js."
+      );
+      document.getElementById("cartContainer").style.display = "none";
+      const emptyState = document.getElementById("emptyCart");
+      emptyState.style.display = "block";
+      emptyState.innerHTML = `
+        <p class="display">We couldn't load your cart.</p>
+        <p style="margin-bottom:1.6rem;">This looks like a loading issue, not an empty bag. Message us directly and we'll take your order from there.</p>
+        <a class="btn btn-dark" href="https://wa.me/2347046672338" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      `;
+      return;
+    }
+
+    renderCartPage();
+    checkoutBtn.addEventListener("click", checkout);
+  }
+
+  initCartPage();
+</script>
+</body>
+</html>
