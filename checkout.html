@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | Saint Paul Luxury</title>
+<meta name="description" content="Complete your Saint Paul Luxury order, customer details, delivery, and payment.">
+<meta property="og:title" content="Checkout | Saint Paul Luxury">
+<meta property="og:description" content="Complete your Saint Paul Luxury order, customer details, delivery, and payment.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/images/emblem-master.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce" aria-hidden="true">
+  <div class="announce-track">
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <nav>
+      <a class="nav-mark" href="index.html" aria-label="Saint Paul Luxury home">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="shop.html">Shop</a>
+        <a href="shop.html">Collections</a>
+        <a href="about.html">The House</a>
+        <a href="legacy.html">Legacy</a>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener">Contact</a>
+        <a href="cart.html">Cart (<span data-cart-count>0</span>)</a>
+      </div>
+      <div class="nav-right">
+        <a class="cart-link" href="cart.html" aria-label="View cart">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+          <span data-cart-count>0</span>
+        </a>
+        <a class="nav-cta" href="https://wa.me/2347046672338" target="_blank" rel="noopener">Enquire</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="container breadcrumb"><a href="index.html">Home</a> / <a href="cart.html">Cart</a> / Checkout</div>
+<section class="page-hero" style="padding-bottom:1rem;">
+  <span class="eyebrow">Checkout</span>
+  <h1 class="display">Complete your order.</h1>
+</section>
+<section style="padding-top:0;" id="checkoutContent">
+  <div class="container checkout-grid">
+    <form id="checkoutForm">
+      <div class="checkout-step">
+        <h2 class="display"><span class="step-num">1</span>Customer details</h2>
+        <div class="field-row">
+          <div class="field"><label for="custName">Full name</label><input id="custName" name="custName" type="text" required></div>
+          <div class="field"><label for="custPhone">Phone number</label><input id="custPhone" name="custPhone" type="tel" required></div>
+        </div>
+        <div class="field"><label for="custEmail">Email (optional)</label><input id="custEmail" name="custEmail" type="email"></div>
+      </div>
+
+      <div class="checkout-step">
+        <h2 class="display"><span class="step-num">2</span>Delivery details</h2>
+        <div class="field"><label for="delAddress">Delivery address</label><input id="delAddress" name="delAddress" type="text" required></div>
+        <div class="field-row">
+          <div class="field"><label for="delCity">City</label><input id="delCity" name="delCity" type="text" required></div>
+          <div class="field"><label for="delState">State</label><input id="delState" name="delState" type="text" required></div>
+        </div>
+        <div class="field"><label for="delNotes">Delivery notes (optional)</label><textarea id="delNotes" name="delNotes" rows="2"></textarea></div>
+      </div>
+
+      <div class="checkout-step">
+        <h2 class="display"><span class="step-num">3</span>Payment</h2>
+        <label class="payment-option" data-disabled="true">
+          <input type="radio" name="paymentMethod" value="online" disabled>
+          <div>
+            <p class="label">Pay online</p>
+            <p class="note">Online payment isn't connected yet. This option will be enabled once a payment provider is set up.</p>
+          </div>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="paymentMethod" value="whatsapp" checked>
+          <div>
+            <p class="label">Order via WhatsApp</p>
+            <p class="note">We'll open WhatsApp with your full order, customer, and delivery details pre-filled, so you can confirm payment and delivery cost directly with us.</p>
+          </div>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-dark" style="width:100%; justify-content:center;"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.26 8.25m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.23-1.46-1.38-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29"/></svg> Place order via WhatsApp</button>
+      <p class="checkout-error" id="checkoutError" role="alert"></p>
+    </form>
+
+    <div class="cart-summary">
+      <h2 class="display" style="font-size:1.3rem; margin-bottom:1.2rem;">Your order</h2>
+      <div id="orderItems"></div>
+      <div class="summary-row total"><span>Total</span><span id="orderTotal">&#8358;0</span></div>
+      <p style="font-size:0.78rem; color:var(--stone); margin-top:1rem; line-height:1.6;">Delivery cost is confirmed with you directly and isn't included in this total yet.</p>
+    </div>
+  </div>
+</section>
+<section id="checkoutEmpty" style="display:none;">
+  <div class="empty-state">
+    <p class="display">Your bag is empty.</p>
+    <p style="margin-bottom:1.6rem;">Add something before checking out.</p>
+    <a class="btn btn-dark" href="shop.html">Shop the collection</a>
+  </div>
+</section>
+
+</main>
+<footer>
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/images/logo.png" alt="Saint Paul Luxury">
+        <p>Small batch menswear, designed and printed in Lagos. Earned, not given.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="shop.html">All products</a>
+        <a href="shop.html?category=Sweatshirts">Sweatshirts</a>
+        <a href="shop.html?category=Headwear">Headwear</a>
+        <a href="shop.html?category=Shorts">Shorts</a>
+      </div>
+      <div class="foot-col">
+        <h4>The House</h4>
+        <a href="legacy.html">Legacy</a>
+        <a href="about.html">About</a>
+        <a href="info.html#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="info.html#shipping">Shipping</a>
+        <a href="info.html#returns">Returns &amp; exchange</a>
+        <a href="info.html#care">Care instructions</a>
+        <a href="info.html#size-guide">Size guide</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener">WhatsApp</a>
+        <span>Lagos, Nigeria</span>
+        <div class="foot-newsletter">
+          <label for="newsletter-email" class="sr-only" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="newsletter-email" type="email" placeholder="Email for updates" aria-label="Email for updates">
+          <button type="button" aria-label="Subscribe">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Saint Paul Luxury. All rights reserved.</span>
+      <div class="foot-social">
+        <a href="https://www.instagram.com/saint.paulluxury" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@saint.paul.luxury" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.1c-.9-.6-1.5-1.6-1.6-2.7h-3v13.4a2.6 2.6 0 1 1-1.9-2.5v-3.1a5.6 5.6 0 1 0 4.9 5.6V9.3a6.9 6.9 0 0 0 3.9 1.2V7.5a4 4 0 0 1-2.3-2.4Z"/></svg>
+        </a>
+        <a href="https://wa.me/2347046672338" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/products.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  const cart = getCart();
+  if (!cart.length) {
+    document.getElementById("checkoutContent").style.display = "none";
+    document.getElementById("checkoutEmpty").style.display = "block";
+  } else {
+    const orderItems = document.getElementById("orderItems");
+    cart.forEach(item => {
+      const row = document.createElement("div");
+      row.className = "order-summary-row";
+      row.innerHTML = `<span>${item.name} (${item.color}, ${item.size}) x${item.qty}${item.preorder ? ' <span class="preorder-tag">Preorder</span>' : ""}</span><span>${formatNaira(item.price * item.qty)}</span>`;
+      orderItems.appendChild(row);
+    });
+    document.getElementById("orderTotal").textContent = formatNaira(cartTotal());
+  }
+
+  document.getElementById("checkoutForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const errorEl = document.getElementById("checkoutError");
+    errorEl.textContent = "";
+
+    const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+    if (method === "online") {
+      errorEl.textContent = "Online payment isn't available yet. Please choose \"Order via WhatsApp\" for now.";
+      return;
+    }
+
+    const customer = {
+      name: document.getElementById("custName").value.trim(),
+      phone: document.getElementById("custPhone").value.trim(),
+      email: document.getElementById("custEmail").value.trim()
+    };
+    const delivery = {
+      address: document.getElementById("delAddress").value.trim(),
+      city: document.getElementById("delCity").value.trim(),
+      state: document.getElementById("delState").value.trim(),
+      notes: document.getElementById("delNotes").value.trim()
+    };
+
+    if (!customer.name || !customer.phone || !delivery.address || !delivery.city || !delivery.state) {
+      errorEl.textContent = "Please fill in all required fields before placing your order.";
+      return;
+    }
+
+    placeOrderViaWhatsApp(customer, delivery, getCart());
+  });
+</script>
+</body>
+</html>

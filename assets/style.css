@@ -281,3 +281,47 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
   transition:transform 0.35s cubic-bezier(0.16,1,0.3,1); z-index:300;
 }
 .toast.show{transform:translate(-50%, 0);}
+
+/* ---------- COSMIC STARS (restrained) ---------- */
+/* A handful of faint marks on dark sections only, never a starfield.
+   Static, low opacity, decorative, purely atmospheric. */
+.stars-host{position:relative; isolation:isolate;}
+.stars-bg{
+  position:absolute; inset:0; width:100%; height:100%;
+  pointer-events:none; z-index:0;
+}
+.stars-host > .container{position:relative; z-index:1;}
+
+/* ---------- CHECKOUT ---------- */
+.checkout-grid{display:grid; grid-template-columns:1.3fr 0.9fr; gap:4vw; align-items:flex-start;}
+@media (max-width:900px){.checkout-grid{grid-template-columns:1fr;}}
+.checkout-step{margin-bottom:2.4rem;}
+.checkout-step h2{font-size:1.2rem; margin-bottom:1.1rem; display:flex; align-items:center; gap:0.6rem;}
+.checkout-step .step-num{
+  width:26px; height:26px; border-radius:50%; border:1px solid var(--ink);
+  display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem;
+  font-family:'Cormorant Garamond',serif;
+}
+.field-row{display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;}
+@media (max-width:520px){.field-row{grid-template-columns:1fr;}}
+.field{display:flex; flex-direction:column; gap:0.4rem;}
+.field label{font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--stone);}
+.field input, .field select, .field textarea{
+  border:1px solid var(--line); background:var(--paper); padding:0.75rem 0.9rem;
+  font-family:'Jost',sans-serif; font-size:0.92rem; color:var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus{outline:2px solid var(--gold-deep); outline-offset:1px;}
+.payment-option{
+  border:1px solid var(--line); padding:1.2rem; margin-bottom:0.8rem; display:flex;
+  align-items:flex-start; gap:0.9rem; cursor:pointer;
+}
+.payment-option[data-disabled="true"]{opacity:0.55; cursor:not-allowed;}
+.payment-option input[type="radio"]{margin-top:0.2rem;}
+.payment-option .label{font-size:0.95rem; font-weight:500;}
+.payment-option .note{font-size:0.8rem; color:var(--stone); margin-top:0.3rem;}
+.preorder-tag{
+  display:inline-block; font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase;
+  border:1px solid var(--gold); color:var(--gold-deep); padding:0.25rem 0.55rem; margin-left:0.5rem;
+}
+.order-summary-row{display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid var(--line); font-size:0.88rem;}
+.checkout-error{color:#8a3a2e; font-size:0.82rem; margin-top:0.6rem; min-height:1.2em;}

@@ -10,6 +10,9 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/images/emblem-master.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -201,6 +204,12 @@
   document.getElementById("crumbName").textContent = product.name;
   document.getElementById("pCategory").textContent = `${product.category} / ${variant.color}`;
   document.getElementById("pName").textContent = product.name;
+  if (product.preorder) {
+    const badge = document.createElement("span");
+    badge.className = "preorder-tag";
+    badge.textContent = "Preorder";
+    document.getElementById("pName").appendChild(badge);
+  }
   document.getElementById("pDesc").textContent = product.description;
   document.getElementById("pFabric").textContent = product.fabric;
   document.getElementById("pFit").textContent = product.fit;
@@ -315,9 +324,12 @@
       size: size,
       price: product.price,
       qty: qty,
-      image: variant.images[0]
+      image: variant.images[0],
+      preorder: !!product.preorder
     });
-    document.getElementById("formNote").textContent = "Added to your bag.";
+    document.getElementById("formNote").textContent = product.preorder
+      ? "Added to your bag. This item is a preorder, it ships once available."
+      : "Added to your bag.";
   });
 
   document.querySelectorAll(".accordion-item button").forEach(btn => {
