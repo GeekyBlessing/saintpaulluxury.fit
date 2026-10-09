@@ -38,6 +38,12 @@ const PRODUCTS = [
         images: [
           "assets/images/sweatshirt-cream-front.jpg"
         ]
+      },
+      {
+        color: "Slate Blue",
+        images: [
+          "assets/images/sweatshirt-slate-front.jpg"
+        ]
       }
     ]
   }
