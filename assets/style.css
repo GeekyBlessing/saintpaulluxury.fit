@@ -333,7 +333,26 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
   display:inline-block; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase;
   background:var(--gold-deep); color:var(--ivory); padding:0.25rem 0.55rem;
 }
-.price-fx{display:block; font-size:0.78em; color:var(--stone); margin-top:0.15rem;}
+/* Default (NGN active, or currency.js hasn't run / failed): .price-ngn is
+   just an inert wrapper around the existing price markup, visually
+   identical to before currency.js ran. */
+.price-ngn{display:contents;}
+
+/* A non-NGN currency is active: the converted estimate becomes the
+   prominent figure, the real NGN amount (what's actually charged) stays
+   visible underneath, smaller. */
+[data-ngn].has-fx{display:flex; flex-direction:column; gap:0.15rem;}
+.has-fx .price-ngn{
+  display:flex; align-items:baseline; gap:0.5rem; flex-wrap:wrap; order:2;
+  font-size:0.74em; color:var(--stone);
+}
+.has-fx .price-ngn .price-sale{color:var(--stone); font-weight:400;}
+.has-fx .price-fx{
+  order:1; display:block; font-size:1.08em; font-weight:500;
+  color:var(--gold-deep); margin-top:0;
+}
+p.pdp-price.has-fx{font-size:1rem;}
+p.pdp-price.has-fx .price-fx{font-size:1.25rem;}
 .currency-select{
   font-family:inherit; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
   border:1px solid var(--line); background:var(--ivory); color:var(--ink);

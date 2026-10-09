@@ -27,17 +27,24 @@ const SUPPORTED_CURRENCIES = {
   NGN: { symbol: "₦", locale: "en-NG" },
   USD: { symbol: "$", locale: "en-US" },
   GBP: { symbol: "£", locale: "en-GB" },
-  GHS: { symbol: "GH₵", locale: "en-GH" }
+  EUR: { symbol: "€", locale: "en-IE" },
+  GHS: { symbol: "GH₵", locale: "en-GH" },
+  CAD: { symbol: "CA$", locale: "en-CA" }
 };
 
-/* Only the countries the client asked about map to a non-NGN currency.
-   To support another country: add its ISO country code here, and make
+/* To support another country: add its ISO country code here, and make
    sure its currency also has an entry in SUPPORTED_CURRENCIES above. */
 const COUNTRY_TO_CURRENCY = {
   NG: "NGN",
   US: "USD",
   GB: "GBP",
-  GH: "GHS"
+  GH: "GHS",
+  CA: "CAD",
+  /* Eurozone */
+  AT: "EUR", BE: "EUR", CY: "EUR", EE: "EUR", FI: "EUR", FR: "EUR",
+  DE: "EUR", GR: "EUR", HR: "EUR", IE: "EUR", IT: "EUR", LV: "EUR",
+  LT: "EUR", LU: "EUR", MT: "EUR", NL: "EUR", PT: "EUR", SK: "EUR",
+  SI: "EUR", ES: "EUR"
 };
 
 let activeCurrency = "NGN";
@@ -135,21 +142,40 @@ function formatMoney(amount, currencyCode) {
 
 /* Finds every [data-ngn] price element on the page (written by priceHtml()
    in products.js, or set directly by cart.html/checkout.html for computed
-   totals) and appends or refreshes its "approx in your currency" estimate.
-   Safe to call repeatedly, e.g. after a currency switch or a grid re-render. */
+   totals) and shows the visitor's chosen currency as the prominent figure,
+   with the real NGN amount kept visible but secondary — that NGN figure is
+   the one actually charged (see main.js: no multi-currency payment gateway
+   is wired up), so it is never hidden, only de-emphasised once a foreign
+   estimate is shown. Safe to call repeatedly, e.g. after a currency switch
+   or a grid re-render.
+
+   The original NGN markup (which can be a plain price, or the
+   sale/compare/discount-badge row from priceHtml()) is wrapped in a
+   .price-ngn span the first time this runs on an element, so CSS can style
+   it independently of the inserted .price-fx estimate without this file
+   needing to know each page's exact price markup. */
 function applyCurrencyDisplay() {
   document.querySelectorAll("[data-ngn]").forEach(el => {
     const ngn = parseFloat(el.dataset.ngn);
-    let fxEl = el.querySelector(".price-fx");
+    if (!el.querySelector(":scope > .price-ngn")) {
+      const wrapper = document.createElement("span");
+      wrapper.className = "price-ngn";
+      while (el.firstChild) wrapper.appendChild(el.firstChild);
+      el.appendChild(wrapper);
+    }
+    let fxEl = el.querySelector(":scope > .price-fx");
     if (activeCurrency === "NGN" || !isFinite(ngn)) {
       if (fxEl) fxEl.remove();
+      el.classList.remove("has-fx");
       return;
     }
     const converted = convertFromNgn(ngn);
     if (converted == null) {
       if (fxEl) fxEl.remove();
+      el.classList.remove("has-fx");
       return;
     }
+    el.classList.add("has-fx");
     if (!fxEl) {
       fxEl = document.createElement("span");
       fxEl.className = "price-fx";
