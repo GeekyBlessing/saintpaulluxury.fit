@@ -42,6 +42,7 @@
         <a href="cart.html" aria-current="page">Cart (<span data-cart-count>0</span>)</a>
       </div>
       <div class="nav-right">
+        <span data-currency-switcher aria-label="Currency"></span>
         <a class="cart-link" href="cart.html" aria-label="View cart">
           <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
           <span data-cart-count>0</span>
@@ -139,6 +140,7 @@
 
 <script src="assets/products.js"></script>
 <script src="assets/main.js"></script>
+<script src="assets/currency.js"></script>
 <script>
   function renderCartPage() {
     const cart = getCart();
@@ -171,7 +173,7 @@
           <button type="button" data-index="${i}" data-dir="1" aria-label="Increase quantity">+</button>
         </div>
         <p style="font-size:0.72rem; color:var(--stone); text-transform:uppercase; letter-spacing:0.08em;">Price</p>
-        <p style="font-family:'Cormorant Garamond',serif; color:var(--gold-deep);">${formatNaira(item.price * item.qty)}</p>
+        <p style="font-family:'Cormorant Garamond',serif; color:var(--gold-deep);" data-ngn="${item.price * item.qty}">${formatNaira(item.price * item.qty)}</p>
       `;
       itemsWrap.appendChild(row);
     });
@@ -191,7 +193,15 @@
     );
 
     document.getElementById("summaryCount").textContent = cart.reduce((s, i) => s + i.qty, 0);
-    document.getElementById("summaryTotal").textContent = formatNaira(cartTotal());
+    const summaryTotalEl = document.getElementById("summaryTotal");
+    summaryTotalEl.textContent = formatNaira(cartTotal());
+    summaryTotalEl.dataset.ngn = cartTotal();
+
+    /* currency.js (optional, loaded after main.js) adds the "approx in your
+       currency" estimate to any [data-ngn] element. Re-apply it after every
+       re-render, since the cart list and total are rebuilt from scratch on
+       qty change. Safe no-op if currency.js didn't load. */
+    if (typeof applyCurrencyDisplay === "function") applyCurrencyDisplay();
   }
 
   /* Dependency guard: assets/main.js defines getCart, formatNaira, cartTotal,

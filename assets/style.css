@@ -325,3 +325,9 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
 }
 .order-summary-row{display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid var(--line); font-size:0.88rem;}
 .checkout-error{color:#8a3a2e; font-size:0.82rem; margin-top:0.6rem; min-height:1.2em;}
+.price-fx{display:block; font-size:0.78em; color:var(--stone); margin-top:0.15rem;}
+.currency-select{
+  font-family:inherit; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;
+  border:1px solid var(--line); background:var(--ivory); color:var(--ink);
+  padding:0.4rem 0.5rem; cursor:pointer;
+}
