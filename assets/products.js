@@ -10,6 +10,7 @@ const PRODUCTS = [
     price: 70000,
     compareAtPrice: 100000,
     preorder: false,
+    tagline: "Made for your own lane. Designed to stand out.",
     description: "An oversized crewneck carrying the Saint Paul Luxury wordmark above the balloon boy graphic. Printed in small runs, never restocked to the letter.",
     fabric: "Heavyweight cotton fleece, garment washed for a broken in feel from the first wear.",
     fit: "Oversized. True to size, size down for a closer fit.",
@@ -86,4 +87,18 @@ function priceHtml(product, size) {
       <span class="price-compare">${formatNaira(product.compareAtPrice)}</span>
       <span class="discount-badge">${pct}% off</span>
     </p>`;
+}
+
+/* Shared card-info markup (category/colour, name, one-line tagline, price,
+   "Get Yours" affordance) used by the homepage, shop grid, and product
+   page's related grid, so card copy and price formatting stay identical
+   everywhere a product is listed. The whole card is already an <a>, so
+   the CTA here is a styled span, not a nested link. */
+function cardInfoHtml(product, variant) {
+  return `
+    <p class="cat">${product.category} / ${variant.color}</p>
+    <h3>${product.name}</h3>
+    ${product.tagline ? `<p class="card-tagline">${product.tagline}</p>` : ""}
+    ${priceHtml(product)}
+    <span class="card-cta">Get Yours</span>`;
 }

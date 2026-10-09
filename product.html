@@ -23,8 +23,8 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="announce" aria-hidden="true">
   <div class="announce-track">
-    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
-    <span>New arrivals</span><span>Clubhouse essentials</span><span>Free Lagos delivery</span><span>Made to order</span>
+    <span>The First Drop Is Here</span><span>30% Off For Launch</span>
+    <span>The First Drop Is Here</span><span>30% Off For Launch</span>
   </div>
 </div>
 <header>
@@ -57,6 +57,12 @@
 <main id="main">
 
 <div class="container breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="crumbName">Product</span></div>
+<section style="padding-bottom:0;">
+  <div class="container" style="max-width:720px;">
+    <h1 class="display" style="font-size:clamp(1.9rem,4vw,2.7rem); line-height:1.15;">Wear Your Story. Own Your Lane.</h1>
+    <p id="pIntro" style="margin-top:0.9rem; color:#3a3733; font-size:1rem; line-height:1.85; max-width:56ch;">The Legacy Sweatshirt is made for those who choose their own direction. Rooted in Lagos and designed to make a statement without saying too much.</p>
+  </div>
+</section>
 <section>
   <div class="container pdp">
     <div class="pdp-gallery">
@@ -67,9 +73,14 @@
     </div>
     <div class="pdp-info">
       <p class="cat" id="pCategory"></p>
-      <h1 id="pName"></h1>
+      <h2 id="pName"></h2>
       <p class="pdp-price" id="pPrice"></p>
       <p class="pdp-desc" id="pDesc"></p>
+
+      <div class="pdp-offer" id="pdpOffer" style="display:none;">
+        <span class="pdp-offer-label">First Drop Privilege</span>
+        <p>Get <span id="pdpOfferName"></span> for <strong id="pdpOfferPrice"></strong> instead of <span id="pdpOfferCompare"></span>. Enjoy <span id="pdpOfferPct"></span>% off during the launch.</p>
+      </div>
 
       <div class="option-block" id="colorBlock" style="display:none;">
         <div class="option-label"><span>Colour: <strong id="selectedColor"></strong></span></div>
@@ -91,8 +102,8 @@
       </div>
 
       <div class="pdp-actions">
-        <button type="button" class="btn btn-dark" id="addToCartBtn">Add to bag</button>
-        <a class="btn btn-outline" id="enquireLink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.26 8.25m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.23-1.46-1.38-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29"/></svg> Enquire on WhatsApp</a>
+        <button type="button" class="btn btn-dark" id="addToCartBtn">Claim Yours</button>
+        <a class="btn btn-outline" id="enquireLink" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.51 2 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.26-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.42 5.83c0 4.55-3.71 8.25-8.26 8.25m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.4-.12-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.38-1.99-1.22-.74-.65-1.23-1.46-1.38-1.71-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42-.14-.01-.31-.01-.48-.01-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.4 1.02 2.57.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29"/></svg> Order via WhatsApp</a>
       </div>
       <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
 
@@ -204,6 +215,7 @@
 
   document.title = `${product.name} | Saint Paul Luxury`;
   document.getElementById("crumbName").textContent = product.name;
+  document.getElementById("pIntro").textContent = `${product.name} is made for those who choose their own direction. Rooted in Lagos and designed to make a statement without saying too much.`;
   document.getElementById("pCategory").textContent = `${product.category} / ${variant.color}`;
   document.getElementById("pName").textContent = product.name;
   if (product.preorder) {
@@ -233,6 +245,18 @@
     }
   }
   renderPrice();
+
+  function renderOffer() {
+    const pct = discountPercent(product);
+    const offer = document.getElementById("pdpOffer");
+    if (!pct) { offer.style.display = "none"; return; }
+    offer.style.display = "block";
+    document.getElementById("pdpOfferName").textContent = product.name;
+    document.getElementById("pdpOfferPrice").textContent = formatNaira(product.price);
+    document.getElementById("pdpOfferCompare").textContent = formatNaira(product.compareAtPrice);
+    document.getElementById("pdpOfferPct").textContent = pct;
+  }
+  renderOffer();
 
   function renderGallery() {
     activeImgIndex = 0;
@@ -369,9 +393,7 @@
         <img class="main-img" src="${v.images[0]}" alt="${p.name} in ${v.color}" loading="lazy">
       </div>
       <div class="info">
-        <p class="cat">${p.category} / ${v.color}</p>
-        <h3>${p.name}</h3>
-        ${priceHtml(p)}
+        ${cardInfoHtml(p, v)}
       </div>`;
     relatedGrid.appendChild(card);
   });
