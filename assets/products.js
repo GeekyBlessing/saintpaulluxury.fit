@@ -96,3 +96,72 @@ function cardInfoHtml(product, variant) {
     ${priceHtml(product)}
     <span class="card-cta">Get Yours</span>`;
 }
+
+/* ---------- Launch offers (delivery + gift) ----------
+   Single source of truth for the two current launch offers, so the
+   product page, shop page, cart, and WhatsApp messages never drift from
+   each other or overstate what's actually on the table.
+
+   Free delivery is real but conditional (Lagos + WhatsApp order only) —
+   every surface that mentions it must carry that condition, never just
+   the headline. The gift is real but deliberately unspecified: the
+   business owner hasn't confirmed what it is yet, so nothing here names
+   an item. */
+const OFFERS = {
+  delivery: {
+    headline: "Lagos, we've got your delivery.",
+    body: "Your Legacy Sweatshirt, delivered free within Lagos when you order through WhatsApp. Pick your colour, send us a message, and let us handle the rest.",
+    badge: "Lagos WhatsApp Orders · Free Delivery",
+    disclosure: "Free delivery applies to Lagos addresses ordered through WhatsApp only. Orders outside Lagos, or placed another way, may carry a delivery cost we'll confirm with you directly."
+  },
+  gift: {
+    headline: "Every order deserves a little extra.",
+    body: "Your piece of the Legacy comes with a little something extra. Enjoy a complimentary surprise with every order, thoughtfully included by Saint Paul Luxury.",
+    badge: "A Little Extra, On Us ✦"
+  }
+};
+
+/* Loose, forgiving check, not a strict address validator: good enough to
+   decide whether a typed city qualifies for the Lagos delivery offer. */
+function isLagosCity(city) {
+  return !!city && city.trim().toLowerCase().includes("lagos");
+}
+
+/* One line about the gift, safe to drop into any WhatsApp message or page
+   copy without ever inventing what the gift actually is. */
+function giftMessageLine() {
+  return "A complimentary gift is included with every order.";
+}
+
+/* One line about delivery, worded to match what's actually known at the
+   point the message is built:
+   - no city yet (product-page enquiry, cart quick-checkout): conditional.
+   - a city is known and it's Lagos: asserted.
+   - a city is known and it isn't Lagos: the offer doesn't apply, said
+     plainly rather than left implied. */
+function deliveryMessageLine(city) {
+  if (city == null) {
+    return "Free delivery applies if this order is for delivery within Lagos, confirmed with you directly over WhatsApp.";
+  }
+  if (isLagosCity(city)) {
+    return "Your delivery is within Lagos, so it's free on this WhatsApp order.";
+  }
+  return `Free delivery applies to Lagos addresses only, so delivery to ${city} isn't included — we'll confirm that cost with you directly.`;
+}
+
+/* Compact two-up card pairing used on the product page and shop page:
+   badge + one-line copy for each offer, no headline, for places that
+   already have a headline doing the work nearby. */
+function offerChipsHtml() {
+  return `
+    <div class="offer-duo">
+      <div class="offer-chip delivery">
+        <span class="offer-badge">${OFFERS.delivery.badge}</span>
+        <p>Free delivery within Lagos on WhatsApp orders.</p>
+      </div>
+      <div class="offer-chip gift">
+        <span class="offer-badge">${OFFERS.gift.badge}</span>
+        <p>${OFFERS.gift.body}</p>
+      </div>
+    </div>`;
+}

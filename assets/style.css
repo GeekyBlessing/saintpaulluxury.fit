@@ -66,6 +66,17 @@ ul{list-style:none;}
 @media (prefers-reduced-motion: reduce){
   .announce-track, .marquee-track{animation:none;}
 }
+/* The full announcement now carries four clauses (drop, discount, Lagos
+   delivery, gift). On a small screen that's too much to read mid-scroll,
+   so a second, shorter track swaps in instead of shrinking the type or
+   speeding up the marquee. Each track is a complete, independent loop
+   (its own doubled content), never a filtered version of the other, so
+   the scrollBar keyframe's -50% math stays correct either way. */
+.announce-track-short{display:none;}
+@media (max-width:700px){
+  .announce-track-full{display:none;}
+  .announce-track-short{display:inline-flex;}
+}
 
 /* ---------- HEADER / NAV ---------- */
 header{
@@ -190,6 +201,7 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
 .shop-intro-offer .price-compare{font-size:0.95rem;}
 .shop-intro-offer .price-sale{font-size:1.3rem;}
 .shop-intro-actions{display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.9rem;}
+.shop-intro-perks{font-size:0.76rem; color:var(--stone); margin-top:0.9rem; line-height:1.6;}
 
 /* Two-image editorial collage: a dominant crop with a smaller offset crop
    breaking its corner, framed in hairline rules (no shadows, no radius).
@@ -341,6 +353,42 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
 }
 .pdp-offer p{margin-top:0.4rem; font-size:0.9rem; color:#3a3733; line-height:1.6;}
 .pdp-offer strong{color:var(--gold-deep);}
+
+/* ---------- LAUNCH PERKS (free Lagos delivery + complimentary gift) ----------
+   Two quiet, equal-weight cards, not a banner. Each gets a small badge and
+   a short headline, same restrained treatment as the rest of the product
+   page rather than a louder promo style, so two new offers don't start
+   to feel like a discount-marketplace wall of claims. */
+.perks{
+  margin-top:1.6rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem;
+  max-width:52ch;
+}
+@media (max-width:560px){.perks{grid-template-columns:1fr;}}
+.perk{border:1px solid var(--line); background:var(--paper); padding:1.1rem 1.2rem;}
+.perk-badge{
+  display:inline-block; font-size:0.62rem; letter-spacing:0.12em; text-transform:uppercase;
+  color:var(--burgundy); border:1px solid var(--burgundy); padding:0.28rem 0.55rem; margin-bottom:0.7rem;
+}
+.perk h3{
+  font-family:'Cormorant Garamond', serif; font-weight:500; font-style:italic;
+  font-size:1.05rem; color:var(--ink); line-height:1.35;
+}
+.perk p{margin-top:0.5rem; font-size:0.82rem; color:#3a3733; line-height:1.6;}
+.perk .perk-note{margin-top:0.6rem; font-size:0.74rem; color:var(--stone); line-height:1.6;}
+
+/* Compact variant: a badge + one line each, for places that already have
+   a headline nearby (the shop spotlight) and don't need a second one. */
+.offer-duo{display:flex; gap:0.9rem; flex-wrap:wrap; margin-top:1.4rem;}
+.offer-chip{
+  flex:1 1 220px; border:1px solid var(--line); background:var(--paper);
+  padding:0.8rem 1rem; border-left:3px solid var(--burgundy);
+}
+.offer-chip.gift{border-left-color:var(--gold-deep);}
+.offer-chip .offer-badge{
+  display:block; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--stone); margin-bottom:0.35rem;
+}
+.offer-chip p{font-size:0.8rem; line-height:1.55; color:#3a3733;}
 
 .option-block{margin-top:1.8rem;}
 .option-label{display:flex; justify-content:space-between; align-items:center; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:0.7rem;}

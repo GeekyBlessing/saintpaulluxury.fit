@@ -98,6 +98,12 @@ function checkout() {
     lines.push(`- ${item.name} (${item.color}, size ${item.size}) x${item.qty} - ${formatNaira(item.price * item.qty)}`);
   });
   lines.push(`Total: ${formatNaira(cartTotal())}`);
+  lines.push("");
+  /* City isn't known yet at this point, so the delivery line stays
+     conditional, it's confirmed once the customer replies below. */
+  if (typeof deliveryMessageLine === "function") lines.push(deliveryMessageLine(null));
+  if (typeof giftMessageLine === "function") lines.push(giftMessageLine());
+  lines.push("");
   lines.push("My delivery city:");
   const text = encodeURIComponent(lines.join("\n"));
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
@@ -125,6 +131,11 @@ function placeOrderViaWhatsApp(customer, delivery, cart) {
   lines.push(`City: ${delivery.city}`);
   lines.push(`State: ${delivery.state}`);
   if (delivery.notes) lines.push(`Notes: ${delivery.notes}`);
+  lines.push("");
+  /* delivery.city is known at this point, so these lines can speak
+     definitively instead of conditionally. */
+  if (typeof deliveryMessageLine === "function") lines.push(deliveryMessageLine(delivery.city));
+  if (typeof giftMessageLine === "function") lines.push(giftMessageLine());
   const text = encodeURIComponent(lines.join("\n"));
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
 }
