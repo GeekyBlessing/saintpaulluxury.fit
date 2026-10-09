@@ -65,7 +65,7 @@ header{
 }
 nav{display:flex; align-items:center; justify-content:space-between; padding:0.9rem 0; gap:1rem;}
 .nav-mark{display:flex; align-items:center; gap:0.7rem;}
-.nav-mark img{height:56px; width:auto;}
+.nav-mark img{height:44px; width:auto;}
 .nav-links{display:flex; gap:2rem; font-size:0.76rem; letter-spacing:0.14em; text-transform:uppercase; align-items:center;}
 .nav-links a{position:relative; padding-bottom:4px;}
 .nav-links a::after{content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width 0.35s ease;}
@@ -113,7 +113,7 @@ section{padding:5.5rem 0;}
 /* ---------- FOOTER ---------- */
 footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(--paper);}
 .foot-top{display:grid; grid-template-columns:1.2fr repeat(4, 1fr); gap:2.4rem; padding-bottom:2.4rem; border-bottom:1px solid var(--line);}
-.foot-brand img{height:52px; margin-bottom:1rem;}
+.foot-brand img{height:38px; margin-bottom:1rem;}
 .foot-brand p{color:var(--stone); font-size:0.9rem; max-width:32ch; line-height:1.7;}
 .foot-col h4{font-family:'Cormorant Garamond', serif; font-size:1.05rem; font-weight:500; margin-bottom:1rem;}
 .foot-col a, .foot-col span{display:block; font-size:0.85rem; color:var(--stone); margin-bottom:0.65rem;}
