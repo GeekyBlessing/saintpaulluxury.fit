@@ -171,7 +171,7 @@
         <div class="info">
           <p class="cat">${p.category} / ${v.color}</p>
           <h3>${p.name}</h3>
-          <p class="price" data-ngn="${p.price}">${formatNaira(p.price)}</p>
+          ${priceHtml(p)}
         </div>`;
       grid.appendChild(card);
     });

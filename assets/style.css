@@ -325,6 +325,14 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
 }
 .order-summary-row{display:flex; justify-content:space-between; padding:0.6rem 0; border-bottom:1px solid var(--line); font-size:0.88rem;}
 .checkout-error{color:#8a3a2e; font-size:0.82rem; margin-top:0.6rem; min-height:1.2em;}
+.price-row{display:flex; align-items:baseline; gap:0.6rem; flex-wrap:wrap; margin-top:0.3rem;}
+.price-row.pdp-price{margin-top:0.6rem;}
+.price-sale{color:var(--gold-deep); font-weight:500;}
+.price-compare{color:var(--stone); text-decoration:line-through; font-size:0.86em;}
+.discount-badge{
+  display:inline-block; font-size:0.62rem; letter-spacing:0.08em; text-transform:uppercase;
+  background:var(--gold-deep); color:var(--ivory); padding:0.25rem 0.55rem;
+}
 .price-fx{display:block; font-size:0.78em; color:var(--stone); margin-top:0.15rem;}
 .currency-select{
   font-family:inherit; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase;

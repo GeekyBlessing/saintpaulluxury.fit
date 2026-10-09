@@ -219,8 +219,18 @@
 
   function renderPrice() {
     const pPriceEl = document.getElementById("pPrice");
-    pPriceEl.textContent = formatNaira(product.price);
+    const pct = discountPercent(product);
     pPriceEl.dataset.ngn = product.price;
+    if (!pct) {
+      pPriceEl.className = "pdp-price price";
+      pPriceEl.innerHTML = formatNaira(product.price);
+    } else {
+      pPriceEl.className = "pdp-price price-row";
+      pPriceEl.innerHTML = `
+        <span class="price-sale">${formatNaira(product.price)}</span>
+        <span class="price-compare">${formatNaira(product.compareAtPrice)}</span>
+        <span class="discount-badge">${pct}% off</span>`;
+    }
   }
   renderPrice();
 
@@ -361,7 +371,7 @@
       <div class="info">
         <p class="cat">${p.category} / ${v.color}</p>
         <h3>${p.name}</h3>
-        <p class="price" data-ngn="${p.price}">${formatNaira(p.price)}</p>
+        ${priceHtml(p)}
       </div>`;
     relatedGrid.appendChild(card);
   });

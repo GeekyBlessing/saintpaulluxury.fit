@@ -87,7 +87,7 @@
 </section>
 
 <section class="reveal" style="padding:0; background:var(--ink);">
-  <img src="assets/images/sweatshirt-cocoa-front.jpg" alt="Saint Paul Luxury, the Legacy Sweatshirt in cocoa" style="width:100%; max-height:560px; object-fit:cover; display:block; opacity:0.94;">
+  <img src="assets/images/sweatshirt-black-front.jpg" alt="Saint Paul Luxury, the Legacy Sweatshirt in black" style="width:100%; max-height:560px; object-fit:cover; display:block; opacity:0.94;">
 </section>
 
 <section class="reveal">
@@ -205,23 +205,23 @@
 <script src="assets/currency.js"></script>
 <script>
   const grid = document.getElementById("homeGrid");
-  const featured = [PRODUCTS[0], PRODUCTS[1], PRODUCTS[2]].filter(Boolean);
-  featured.forEach(p => {
-    const v = p.variants[0];
-    const card = document.createElement("a");
-    card.className = "product-card";
-    card.href = `product.html?slug=${p.slug}&color=${encodeURIComponent(v.color)}`;
-    card.innerHTML = `
-      <div class="thumb">
-        <img class="main-img" src="${v.images[0]}" alt="${p.name} in ${v.color}, front" loading="lazy">
-        ${v.images[1] ? `<img class="alt-img" src="${v.images[1]}" alt="${p.name} in ${v.color}, back" loading="lazy">` : ""}
-      </div>
-      <div class="info">
-        <p class="cat">${p.category} / ${v.color}</p>
-        <h3>${p.name}</h3>
-        <p class="price" data-ngn="${p.price}">${formatNaira(p.price)}</p>
-      </div>`;
-    grid.appendChild(card);
+  PRODUCTS.forEach(p => {
+    p.variants.forEach(v => {
+      const card = document.createElement("a");
+      card.className = "product-card";
+      card.href = `product.html?slug=${p.slug}&color=${encodeURIComponent(v.color)}`;
+      card.innerHTML = `
+        <div class="thumb">
+          <img class="main-img" src="${v.images[0]}" alt="${p.name} in ${v.color}, front" loading="lazy">
+          ${v.images[1] ? `<img class="alt-img" src="${v.images[1]}" alt="${p.name} in ${v.color}, back" loading="lazy">` : ""}
+        </div>
+        <div class="info">
+          <p class="cat">${p.category} / ${v.color}</p>
+          <h3>${p.name}</h3>
+          ${priceHtml(p)}
+        </div>`;
+      grid.appendChild(card);
+    });
   });
 </script>
 </body>
