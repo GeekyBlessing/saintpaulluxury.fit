@@ -7,6 +7,14 @@
   --stone:#8B8172;
   --line: rgba(20,18,16,0.13);
   --line-ivory: rgba(248,244,234,0.2);
+  /* Sampled from the garment photography (olive sweatshirt hem) and tuned
+     for UI legibility; burgundy has no source photo, chosen to sit quietly
+     alongside gold/ink. Both are used sparingly, not as section washes. */
+  --olive:#4B5236;
+  --olive-deep:#363B26;
+  --burgundy:#6E2A34;
+  --burgundy-deep:#551F27;
+  --cream-swatch:#E7DBBF;
   --maxw:1220px;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -51,10 +59,13 @@ ul{list-style:none;}
   font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase;
   padding:0.65rem 0; overflow:hidden; white-space:nowrap;
 }
-.announce-track{display:inline-flex; animation:scrollBar 26s linear infinite;}
+.announce-track{display:inline-flex; animation:scrollBar 34s linear infinite;}
 .announce span{padding:0 2rem; display:inline-flex; align-items:center; gap:1.6rem; color:rgba(248,244,234,0.85);}
-.announce span::after{content:'\00b7'; color:var(--gold); font-size:0.9rem;}
+.announce span::after{content:'\2726'; color:var(--gold); font-size:0.76rem;}
 @keyframes scrollBar{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+@media (prefers-reduced-motion: reduce){
+  .announce-track, .marquee-track{animation:none;}
+}
 
 /* ---------- HEADER / NAV ---------- */
 header{
@@ -151,6 +162,118 @@ footer{padding:3rem 0 2.2rem; border-top:1px solid var(--line); background:var(-
 .btn-outline-light:hover{background:var(--ivory); color:var(--ink); transform:translateY(-2px);}
 .btn[disabled]{opacity:0.4; cursor:not-allowed; pointer-events:none;}
 .btn svg{width:16px; height:16px;}
+
+/* ---------- SHOP INTRO (editorial) ---------- */
+.shop-intro{padding:3.4rem 0 4.4rem;}
+.shop-intro .container{
+  display:grid; grid-template-columns:0.92fr 1fr; gap:5vw; align-items:center;
+}
+@media (max-width:980px){
+  .shop-intro .container{grid-template-columns:1fr; gap:2.6rem;}
+}
+.shop-intro-eyebrow{display:flex; flex-direction:column; gap:0.15rem; margin-bottom:1.3rem;}
+.shop-intro-eyebrow span{font-size:0.7rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--stone);}
+.shop-intro-eyebrow span.accent{color:var(--gold-deep); font-weight:500;}
+.shop-intro h1{font-size:clamp(2.1rem,3.6vw,3.1rem); line-height:1.1; max-width:11ch;}
+.shop-intro-copy{
+  font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1.12rem;
+  color:#3a3733; line-height:1.65; max-width:40ch; margin-top:1.1rem;
+}
+.shop-intro-offer{
+  margin-top:1.8rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap;
+  padding:0.9rem 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+}
+.shop-intro-offer .tag{
+  font-size:0.66rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--burgundy);
+  border:1px solid var(--burgundy); padding:0.3rem 0.6rem;
+}
+.shop-intro-offer .price-compare{font-size:0.95rem;}
+.shop-intro-offer .price-sale{font-size:1.3rem;}
+.shop-intro-actions{display:flex; flex-wrap:wrap; gap:1rem; margin-top:1.9rem;}
+
+/* Two-image editorial collage: a dominant crop with a smaller offset crop
+   breaking its corner, framed in hairline rules (no shadows, no radius).
+   Editorial tags live in the surrounding gutter, never over the artwork. */
+.shop-intro-media{position:relative;}
+.collage{position:relative; max-width:440px; margin-left:auto;}
+.collage-primary{aspect-ratio:4/5; border:1px solid var(--line); overflow:hidden; background:var(--paper);}
+.collage-primary img{width:100%; height:100%; object-fit:cover;}
+.collage-secondary{
+  position:absolute; left:-8%; bottom:0; width:40%; aspect-ratio:4/5;
+  border:1px solid var(--line); overflow:hidden; background:var(--paper);
+  box-shadow:0 0 0 7px var(--ivory);
+}
+.collage-secondary img{width:100%; height:100%; object-fit:cover;}
+.editorial-tags{display:flex; justify-content:space-between; gap:1rem; margin-top:1.4rem; flex-wrap:wrap;}
+.editorial-tags span{font-size:0.64rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--stone); white-space:nowrap;}
+@media (max-width:980px){
+  .collage{margin-left:0; margin-right:auto; max-width:420px;}
+}
+@media (max-width:560px){
+  .collage-secondary{left:-5%; width:44%;}
+}
+
+/* ---------- COLLECTION SPOTLIGHT ---------- */
+.spotlight-head{max-width:640px; margin-bottom:2.8rem;}
+.spotlight{display:grid; grid-template-columns:1.1fr 0.9fr; gap:4.5vw; align-items:flex-start;}
+@media (max-width:900px){.spotlight{grid-template-columns:1fr; gap:2rem;}}
+.spotlight-stage{
+  position:relative; aspect-ratio:4/5; background:var(--paper); border:1px solid var(--line);
+  overflow:hidden;
+}
+.spotlight-stage img{width:100%; height:100%; object-fit:cover; opacity:0; position:absolute; inset:0; transition:opacity 0.4s ease;}
+.spotlight-stage img.active{opacity:1;}
+.spotlight-view{
+  position:absolute; right:14px; bottom:14px; z-index:2;
+  display:flex; align-items:center; gap:0.5rem;
+  background:var(--ivory); border:1px solid var(--ink); padding:0.55rem 0.95rem;
+  font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase;
+  opacity:0; transform:translateY(6px); transition:opacity 0.3s ease, transform 0.3s ease;
+}
+.spotlight-stage:hover .spotlight-view, .spotlight-stage:focus-within .spotlight-view{opacity:1; transform:translateY(0);}
+.spotlight-info .cat{font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--stone);}
+.spotlight-info h3{font-family:'Cormorant Garamond', serif; font-weight:500; font-size:clamp(1.8rem,2.6vw,2.3rem); margin-top:0.5rem;}
+.spotlight-info .card-tagline{
+  font-family:'Cormorant Garamond', serif; font-style:italic; font-size:1rem;
+  color:#3a3733; margin-top:0.6rem; max-width:40ch; line-height:1.6;
+}
+.spotlight-info .price-row{margin-top:1.1rem; font-size:1.15rem;}
+.spotlight-colours{margin-top:1.7rem;}
+.spotlight-colours .option-label{font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--stone); margin-bottom:0.8rem;}
+.colour-dots{display:flex; gap:0.8rem;}
+.colour-dot{
+  width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+  padding:3px; position:relative; transition:border-color 0.2s ease;
+}
+.colour-dot span{display:block; width:100%; height:100%; border-radius:50%;}
+.colour-dot.active{border-color:var(--ink);}
+.colour-dot.active::after{
+  content:''; position:absolute; inset:-5px; border:1px solid var(--ink); border-radius:50%;
+}
+.spotlight-actions{display:flex; flex-wrap:wrap; gap:1rem; margin-top:2rem;}
+.spotlight-facts{margin-top:2.6rem; border-top:1px solid var(--line); max-width:42ch;}
+.spotlight-facts .fact{
+  display:grid; grid-template-columns:7.5rem 1fr; gap:1rem; padding:0.9rem 0;
+  border-bottom:1px solid var(--line); font-size:0.86rem;
+}
+.spotlight-facts dt{color:var(--stone); font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; padding-top:0.1rem;}
+.spotlight-facts dd{color:#3a3733; line-height:1.6;}
+
+/* ---------- PROMO CLOSE ---------- */
+.promo-close{text-align:center;}
+.promo-close .eyebrow{color:var(--gold);}
+.promo-close h2{color:var(--ivory); font-size:clamp(1.9rem,4vw,2.5rem); margin-top:0.8rem; max-width:18ch; margin-left:auto; margin-right:auto;}
+.promo-close p.lead{
+  margin-top:1.1rem; color:rgba(248,244,234,0.75); font-size:1rem; line-height:1.8;
+  max-width:46ch; margin-left:auto; margin-right:auto;
+}
+.promo-close .promo-price{
+  display:flex; align-items:baseline; justify-content:center; gap:0.8rem; flex-wrap:wrap;
+  margin-top:1.8rem; font-size:1.3rem;
+}
+.promo-close .promo-price .price-compare{color:rgba(248,244,234,0.5); font-size:0.78em;}
+.promo-close .promo-price .price-sale{color:var(--ivory); font-weight:500;}
+.promo-close .promo-price .discount-badge{background:var(--burgundy); color:var(--ivory);}
 
 /* ---------- SHOP GRID ---------- */
 .shop-toolbar{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.2rem; margin-bottom:2.6rem;}
